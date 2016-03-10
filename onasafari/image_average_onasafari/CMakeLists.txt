@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(virtual_mirror_npd22)
+project(image_average_onasafari)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-catkin_python_setup()
+# catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -101,7 +101,7 @@ catkin_python_setup()
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES virtual_mirror_npd22
+#  LIBRARIES image_average_onasafari
 #  CATKIN_DEPENDS duckietown_msgs roscpp rospy
 #  DEPENDS system_lib
 )
@@ -118,24 +118,24 @@ include_directories(
 )
 
 ## Declare a C++ library
-# add_library(virtual_mirror_npd22
-#   src/${PROJECT_NAME}/virtual_mirror_npd22.cpp
+# add_library(image_average_onasafari
+#   src/${PROJECT_NAME}/image_average_onasafari.cpp
 # )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(virtual_mirror_npd22 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(image_average_onasafari ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(virtual_mirror_npd22_node src/virtual_mirror_npd22_node.cpp)
+# add_executable(image_average_onasafari_node src/image_average_onasafari_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(virtual_mirror_npd22_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(image_average_onasafari_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(virtual_mirror_npd22_node
+# target_link_libraries(image_average_onasafari_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -148,14 +148,13 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
- install(PROGRAMS
-   scripts/my_python_script
-   src/virtual_mirror_npd22_node.py
-   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
- )
+# install(PROGRAMS
+#   scripts/my_python_script
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS virtual_mirror_npd22 virtual_mirror_npd22_node
+# install(TARGETS image_average_onasafari image_average_onasafari_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -180,7 +179,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_virtual_mirror_npd22.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_image_average_onasafari.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
