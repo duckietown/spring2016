@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(virtual_mirror_npd22)
+project(average_img)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -65,10 +65,11 @@ catkin_python_setup()
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   duckietown_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  duckietown_msgs
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -100,10 +101,10 @@ catkin_python_setup()
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES virtual_mirror_npd22
-#  CATKIN_DEPENDS duckietown_msgs roscpp rospy
-#  DEPENDS system_lib
+ INCLUDE_DIRS include
+ LIBRARIES average_img
+ CATKIN_DEPENDS duckietown_msgs roscpp rospy message_runtime
+ DEPENDS system_lib
 )
 
 ###########
@@ -118,24 +119,24 @@ include_directories(
 )
 
 ## Declare a C++ library
-# add_library(virtual_mirror_npd22
-#   src/${PROJECT_NAME}/virtual_mirror_npd22.cpp
+# add_library(average_img
+#   src/${PROJECT_NAME}/average_img.cpp
 # )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(virtual_mirror_npd22 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(average_img ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(virtual_mirror_npd22_node src/virtual_mirror_npd22_node.cpp)
+# add_executable(average_img_node src/average_img_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(virtual_mirror_npd22_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(average_img_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(virtual_mirror_npd22_node
+# target_link_libraries(average_img_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -148,14 +149,13 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
- install(PROGRAMS
-   scripts/my_python_script
-   src/virtual_mirror_npd22_node.py
-   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
- )
+# install(PROGRAMS
+#   scripts/my_python_script
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS virtual_mirror_npd22 virtual_mirror_npd22_node
+# install(TARGETS average_img average_img_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -180,7 +180,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_virtual_mirror_npd22.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_average_img.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
